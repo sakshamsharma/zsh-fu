@@ -1,5 +1,4 @@
 # Packages
-#alias vim='nvim'
 alias em='emacsclient'
 
 # Package management
