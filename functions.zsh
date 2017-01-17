@@ -61,3 +61,16 @@ function proxy() {
 function hcave() {
     http -v $1 "localhost:7771${2}" ${@:3} $COOKIE $XSRF
 }
+
+function tn() {
+    tmux new -s "$1"
+}
+
+function ta() {
+    tmux attach -t "$1"
+}
+
+function chat() {
+    touch chat
+    echo "[`whoami`]: $@" >> chat
+}

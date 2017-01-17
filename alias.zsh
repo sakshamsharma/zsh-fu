@@ -1,5 +1,10 @@
 # Packages
-alias em='emacsclient'
+alias vim='nvim'
+alias em='emacsclient -t -a ""'
+alias k='kubectl'
+alias d='docker'
+alias latexclean='rm -f *.aux *.log *.out'
+alias startx='ssh-agent startx'
 
 # Package management
 alias pac='sudo pacman -S'
