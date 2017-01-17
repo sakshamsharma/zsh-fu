@@ -46,8 +46,12 @@ bindkey '\C-N' history-beginning-search-forward
 # Credits where they're due :)
 # https://github.com/zsh-users/zaw
 # http://blog.patshead.com/2013/04/more-powerful-zsh-history-search-using-zaw.html
-source $ZSH/zaw/zaw.zsh
-bindkey '^R' zaw-history
-bindkey -M filterselect '^R' down-line-or-history
-bindkey -M filterselect '^S' up-line-or-history
-bindkey -M filterselect '^E' accept-search
+#source $ZSH/zaw/zaw.zsh
+#bindkey '^R' zaw-history
+#bindkey -M filterselect '^R' down-line-or-history
+#bindkey -M filterselect '^S' up-line-or-history
+#bindkey -M filterselect '^E' accept-search
+
+# Bash-like navigation
+autoload -U select-word-style
+select-word-style bash
