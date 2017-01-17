@@ -3,21 +3,25 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+export GOROOT=/usr/local/go
+
 path=(
+  $HOME/arcanist/bin
   $HOME/bins/
   /usr/local/{bin,sbin}
-  /usr/{bin,sbin}
+  /usr/{bin,sbin,games}
   /{bin,sbin}
   /opt/bin
   $HOME/.stack/programs/x86_64-linux/ghc-7.10.3/bin
   $HOME/.local/bin
   $HOME/.cabal/bin
-  $HOME/arcanist/bin
+  $HOME/go/bin
+  $GOROOT/bin
   $HOME/kubernetes/cluster/ubuntu/binaries
   $HOME/.myscripts
   $HOME/.stack/programs/x86_64-linux/ghc-7.10.3/bin
+  $HOME/go/bin
 )
-
 
 export GHC_PACKAGE_PATH=$HOME/.stack/global-project/.stack-work/install/x86_64-linux/lts-5.17/7.10.3/pkgdb:$HOME/.stack/snapshots/x86_64-linux/lts-5.17/7.10.3/pkgdb:$HOME/.stack/programs/x86_64-linux/ghc-7.10.3/lib/ghc-7.10.3/package.conf.d
 
@@ -30,6 +34,7 @@ export GHC_PACKAGE_PATH=/home/ssharma/.stack/global-project/.stack-work/install/
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
+export GOPATH=$HOME/go
 export ZSH=$HOME/.zsh
 
 source $ZSH/alias.zsh

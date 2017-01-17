@@ -50,3 +50,14 @@ function run_disowned() {
 function dos() {
   run_disowned "$@" 1>/dev/null 2>/dev/null
 }
+
+function proxy() {
+    export HTTP_PROXY=$1
+    export HTTPS_PROXY=$1
+    export http_proxy=$1
+    export https_proxy=$1
+}
+
+function hcave() {
+    http -v $1 "localhost:7771${2}" ${@:3} $COOKIE $XSRF
+}
