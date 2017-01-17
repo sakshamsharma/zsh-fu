@@ -3,18 +3,12 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-<<<<<<< HEAD
 export GOROOT=/usr/local/go
 
-path=(
-  $HOME/arcanist/bin
-  $HOME/bins/
-=======
 fpath+=("${ZSH}/functions")
 
 path=(
   $HOME/bins
->>>>>>> Various usability hacks
   /usr/local/{bin,sbin}
   /usr/{bin,sbin,games}
   /{bin,sbin}
@@ -24,32 +18,20 @@ path=(
   $HOME/.cabal/bin
   $HOME/go/bin
   $GOROOT/bin
-  $HOME/kubernetes/cluster/ubuntu/binaries
   $HOME/.myscripts
-<<<<<<< HEAD
   $HOME/.stack/programs/x86_64-linux/ghc-7.10.3/bin
-  $HOME/go/bin
-)
-
-export GHC_PACKAGE_PATH=$HOME/.stack/global-project/.stack-work/install/x86_64-linux/lts-5.17/7.10.3/pkgdb:$HOME/.stack/snapshots/x86_64-linux/lts-5.17/7.10.3/pkgdb:$HOME/.stack/programs/x86_64-linux/ghc-7.10.3/lib/ghc-7.10.3/package.conf.d
-=======
   $HOME/.stack/programs/x86_64-linux/ghc-tinfo6-8.0.1/bin
   $HOME/.gem/ruby/2.1.0/bin
-  $HOME/go/bin
+  $HOME/kubernetes/cluster/ubuntu/binaries
 )
-
 
 export GHC_PACKAGE_PATH=$HOME/.stack/global-project/.stack-work/install/x86_64-linux-tinfo6/lts-7.15/8.0.1/pkgdb:$HOME/.stack/snapshots/x86_64-linux-tinfo6/lts-7.15/8.0.1/pkgdb:$HOME/.stack/programs/x86_64-linux/ghc-tinfo6-8.0.1/lib/ghc-8.0.1/package.conf.d
 
-export GOPATH=$HOME/go
 export WORKON_HOME=~/.envs
 export PROJECT_HOME=~/code
->>>>>>> Various usability hacks
 
 export EDITOR=vim
 export VISUAL=vim
-
-export GHC_PACKAGE_PATH=/home/ssharma/.stack/global-project/.stack-work/install/x86_64-linux/lts-5.17/7.10.3/pkgdb:/home/ssharma/.stack/snapshots/x86_64-linux/lts-5.17/7.10.3/pkgdb:/home/ssharma/.stack/programs/x86_64-linux/ghc-7.10.3/lib/ghc-7.10.3/package.conf.d:$GHC_PACKAGE_PATH
 
 # Node version manager
 export NVM_DIR="$HOME/.nvm"
