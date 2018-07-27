@@ -8,6 +8,7 @@ export GOROOT=/usr/local/go
 fpath+=("${ZSH}/functions")
 
 path=(
+  $HOME/bin
   $HOME/bins
   /usr/local/{bin,sbin}
   /usr/{bin,sbin,games}
@@ -22,7 +23,6 @@ path=(
   $HOME/.stack/programs/x86_64-linux/ghc-7.10.3/bin
   $HOME/.stack/programs/x86_64-linux/ghc-tinfo6-8.0.1/bin
   $HOME/.gem/ruby/2.1.0/bin
-  $HOME/kubernetes/cluster/ubuntu/binaries
 )
 
 export GHC_PACKAGE_PATH=$HOME/.stack/global-project/.stack-work/install/x86_64-linux-tinfo6/lts-7.15/8.0.1/pkgdb:$HOME/.stack/snapshots/x86_64-linux-tinfo6/lts-7.15/8.0.1/pkgdb:$HOME/.stack/programs/x86_64-linux/ghc-tinfo6-8.0.1/lib/ghc-8.0.1/package.conf.d
@@ -43,9 +43,9 @@ export ZSH=$HOME/.zsh
 source $ZSH/alias.zsh
 source $ZSH/functions.zsh
 source $ZSH/bindkey.zsh
-source $HOME/.zpyi/zpyi.zsh
-source $HOME/.cookies
-#source $ZSH/autojump.zsh
+[ -f $HOME/.zpyi/zpyi.zsh ] && source $HOME/.zpyi/zpyi.zsh
+[ -f $HOME/.cookies ] && source $HOME/.cookies
+[ -f $HOME/.localzshconfig.zsh ] && source $HOME/.localzshconfig.zsh
 
 export TERM=xterm-256color
 
@@ -78,7 +78,6 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
-source <($HOME/code/kubernetes/cluster/kubectl.sh completion zsh)
 gocd () { cd `go list -f '{{.Dir}}' $1` }
 
 function dbash() {

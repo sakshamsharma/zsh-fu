@@ -70,7 +70,6 @@ function ta() {
     tmux attach -t "$1"
 }
 
-function chat() {
-    touch chat
-    echo "[`whoami`]: $@" >> chat
+function pui() {
+  pip install --user $@
 }
